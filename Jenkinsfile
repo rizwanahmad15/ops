@@ -9,12 +9,13 @@ pipeline {
             }
         }
         
-        // stage('Deploy') {
-        //     steps {
-        //         // Copy the HTML files to a web server or a directory accessible via HTTP.
-        //         // This could be an FTP upload, a cloud storage sync, or copying to a web server root.
-        //         // Adjust this step based on your deployment method.
-        //     }
-        // }
+        stage("Publish Artifacts Development") {
+            steps {
+                sh "echo ls -al"
+                sh "ssh ubuntu@18.224.88.112 rm -rf /var/www/html/*"
+                // sh "scp -r ./* $USER@$DEVELOPMENT_HOST:$TARGET_PATH"
+                // sh "scp -r /home/jenkins/env_vars/kwik_trust_backend $USER@$DEVELOPMENT_HOST:$TARGET_PATH/.env"
+            }
+        } 
     }
 }
