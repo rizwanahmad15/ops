@@ -17,7 +17,7 @@ pipeline {
         
         stage("Publish Artifacts Development") {
             steps {
-                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo -S cp -R ./${COMMIT_HASH}/ops/* /var/www/html/."
+                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo -S cp -R ./${COMMIT_HASH}/* /var/www/html/."
             }
         } 
     }
