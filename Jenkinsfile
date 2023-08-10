@@ -7,14 +7,14 @@ pipeline {
                 // Checkout the source code from your Git repository
                 sh "pwd"
                 sh "whoami"
-                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo rm -rf /var/lib/jenkins/workspace/ops*"
+                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo -S rm -rf /var/lib/jenkins/workspace/ops*"
                 sh "git clone https://github.com/rizwanahmad15/ops.git"
             }
         }
         
         stage("Publish Artifacts Development") {
             steps {
-                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo cp -R ./ops/* /var/www/html/."
+                sh "echo '2f3308d349004e8d9e923eb04ae4938d' | sudo -S cp -R ./ops/* /var/www/html/."
             }
         } 
     }
