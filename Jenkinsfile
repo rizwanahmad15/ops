@@ -7,7 +7,7 @@ pipeline {
                 // Checkout the source code from your Git repository
                 sh "pwd"
                 sh "whoami"
-                sh "bash /home/ubuntu/remove_artifacts"
+                sh "sudo bash /home/ubuntu/remove_artifacts"
                 sh "git clone https://github.com/rizwanahmad15/ops.git"
             }
         }
