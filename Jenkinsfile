@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from your Git repository
-                git clone "https://github.com/rizwanahmad15/ops.git"
+                sh "git clone https://github.com/rizwanahmad15/ops.git"
             }
         }
         
